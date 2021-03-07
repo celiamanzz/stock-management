@@ -1,13 +1,18 @@
 <h1>Aplicación de Stock</h1>
 
+<h2>Mostrar Stock</h2>
+<form method="GET" action="/stocks">
+  <input type="submit" name="VerStock" value="Ver Stock Completo">
+</form>
+
+<form method="GET" action="/stocks">
+  <input type="text" placeholder="Id Stock" name="id">
+  <input type="submit" name="VerStock" value="Ver Stock">
+</form>
+
 <h2>Crear nuevo Stock</h2>
 <form action="/stocks" method="POST">
   <input type="text" placeholder="Producto" name="product">
   <input type="numbre" placeholder="Unidades" name="units">
   <button type="submit">Añadir</button>
-</form>
-<h2>Mostrar Stock</h2>
-<form method="GET" action="/stocks">
-  <input type="text" name="producto" />
-  <input type="submit" name="VerStock" value="Ver Stock">
 </form>
