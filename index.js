@@ -48,17 +48,16 @@ console.log(request.body)
 }
 
 const updateStock = (request, response) => {
-  const id = parseInt(request.params.id)
-  const { producto, precio, unidades } = request.body
+  const {product, units} = request.body
 
   pool.query(
-    'UPDATE stock SET producto = $1, precio_unidad = $2, num_unidades = $3 WHERE id = $4',
-    [producto, precio, unidades, id],
+    'UPDATE stock SET units = $2 WHERE product = $1',
+    [units, product],
     (error, results) => {
       if (error) {
         throw error
       }
-      response.status(200).send(`Stock modified with ID: ${id}`)
+      response.status(200).send(`Stock modificado: ${product}`)
     }
   )
 }
