@@ -51,7 +51,7 @@ const updateStock = (request, response) => {
   const {product, units} = request.body
 
   pool.query(
-    'UPDATE stock SET units = $2 WHERE product = $1',
+    'UPDATE stock SET units = $1 WHERE product = $2',
     [units, product],
     (error, results) => {
       if (error) {
