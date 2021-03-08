@@ -31,6 +31,8 @@ const getStockById = (request, response) => {
 }
 
 const addStock = (request, response) => {
+console.log(reques.body)
+
   const {product, units} = request.body
 
   pool.query(
