@@ -19,17 +19,6 @@ const getStock = (request, response) => {
   })
 }
 
-const getStockById = (request, response) => {
-  const id = parseInt(request.params.id)
-
-  pool.query('SELECT * FROM stock WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.status(200).json(results.rows)
-  })
-}
-
 const addStock = (request, response) => {
 console.log(request.body)
 
@@ -77,7 +66,6 @@ app.get('/', function(req, res) {
 });
 
 app.get('/stocks', getStock)
-app.get('/stocks/:id', getStockById)
 app.post('/stocks', addStock)
 app.post('/stocks_mod', updateStock)
 

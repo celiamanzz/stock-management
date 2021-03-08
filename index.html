@@ -5,11 +5,6 @@
   <input type="submit" name="VerStock" value="Ver Stock Completo">
 </form>
 
-<form method="GET" action="/stocks">
-  <input type="text" placeholder="Id Stock" name="id">
-  <input type="submit" name="VerStock" value="Ver Stock">
-</form>
-
 <h2>Crear nuevo Stock</h2>
 <form action="/stocks" method="POST">
   <input type="text" placeholder="Producto" name="product">
@@ -22,5 +17,5 @@
 <form action="/stocks_mod" method="POST">
   <input type="text" placeholder="Producto" name="product">
   <input type="number" placeholder="Unidades" name="units">
-  <button type="submit">Añadir</button>
+  <button type="submit">Modificar</button>
 </form>
