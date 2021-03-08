@@ -31,7 +31,7 @@ const getStockById = (request, response) => {
 }
 
 const addStock = (request, response) => {
-console.log(reques.body)
+console.log(request.body)
 
   const {product, units} = request.body
 
