@@ -79,7 +79,8 @@ app.get('/', function(req, res) {
 app.get('/stocks', getStock)
 app.get('/stocks/:id', getStockById)
 app.post('/stocks', addStock)
-app.put('/stocks/:id', updateStock)
+app.post('/stocks_mod', updateStock)
+
 
 // Start server
 app.listen(process.env.PORT || 3002, () => {
