@@ -36,7 +36,7 @@ console.log(request.body)
   const {product, units} = request.body
 
   pool.query(
-    'INSERT INTO  (product, units) VALUES ($1, $2)',
+    'INSERT INTO  stock(product, units) VALUES ($1, $2)',
     [product, units],
     (error) => {
       if (error) {
