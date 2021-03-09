@@ -18,6 +18,7 @@ const getStock = (request, response) => {
       throw error
     }
     response.status(200).json(results.rows)
+response.send('<p>some html</p>');
   })
 }
 
