@@ -17,7 +17,18 @@ const getStock = (request, response) => {
     if (error) {
       throw error
     }
-    response.status(200).json(results.rows)
+
+    const data = results.rows;
+
+    data.forEach(row => {
+        var result = result + "<\br>" + (`Producto: ${row.product} Unidades: ${row.units}`);
+    })
+
+    response.status(200).send(result)
+	
+    )
+
+    //response.status(200).json(results.rows)
   })
 }
 
@@ -34,7 +45,6 @@ console.log(request.body)
         throw error
       }
 	response.status(201).send(`Stock añadido: ${product} con ${units} unidades`)
-//      response.status(201).json({status: 'success', message: 'Stock added.'})
     },
   )
 }
