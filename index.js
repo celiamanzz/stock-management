@@ -26,7 +26,7 @@ const getStock = (request, response) => {
 
     response.status(200).send(result)
 	
-    )
+    //)
 
     //response.status(200).json(results.rows)
   })
