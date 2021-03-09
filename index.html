@@ -1,11 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="stock.css">
+</head>
+<body>
+
 <h1>Aplicación de Stock</h1>
 
-<h2>Mostrar Stock</h2>
+<p>Mostrar Stock</p>
 <form method="GET" action="/stocks">
-  <input type="submit" name="VerStock" value="Ver Stock Completo">
+  <button type="submit" name="VerStock">Ver Stock Completo</button>
 </form>
 
-<h2>Crear nuevo Stock</h2>
+<p>Crear nuevo Stock</p>
 <form action="/stocks" method="POST">
   <input type="text" placeholder="Producto" name="product">
   <input type="number" placeholder="Unidades" name="units">
@@ -13,9 +20,10 @@
 </form>
 
 
-<h2>Modificar Stock</h2>
+<p>Modificar Stock</p>
 <form action="/stocks_mod" method="POST">
   <input type="text" placeholder="Producto" name="product">
   <input type="number" placeholder="Unidades" name="units">
   <button type="submit">Modificar</button>
 </form>
+
