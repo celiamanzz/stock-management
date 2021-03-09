@@ -18,7 +18,6 @@ const getStock = (request, response) => {
       throw error
     }
     response.status(200).json(results.rows)
-response.send('<p>some html</p>');
   })
 }
 
@@ -34,7 +33,8 @@ console.log(request.body)
       if (error) {
         throw error
       }
-      response.status(201).json({status: 'success', message: 'Stock added.'})
+	response.status(201).send(`Stock añadido: ${product} con ${units} unidades`)
+//      response.status(201).json({status: 'success', message: 'Stock added.'})
     },
   )
 }
