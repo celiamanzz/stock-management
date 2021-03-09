@@ -20,8 +20,10 @@ const getStock = (request, response) => {
 
     const data = results.rows;
 
+var result;
+
     data.forEach(row => {
-        var result = result + "<\br>" + (`Producto: ${row.product} Unidades: ${row.units}`);
+       result = result + "<\br>" + (`Producto: ${row.product} Unidades: ${row.units}`);
     })
 
     response.status(200).send(result)
