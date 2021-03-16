@@ -20,10 +20,10 @@ const getStock = (request, response) => {
 
     const data = results.rows;
 
-var result = "Stock obtenido: ";
+var result = "Servicios obtenidos: ";
 
     data.forEach(row => {
-       result = result + "<br/>" + (`Producto: ${row.product} Unidades: ${row.units}`);
+       result = result + "<br/>" + (`Producto: ${row.product}`);
     })
 
     response.status(200).send(result)
@@ -37,16 +37,16 @@ var result = "Stock obtenido: ";
 const addStock = (request, response) => {
 console.log(request.body)
 
-  const {product, units} = request.body
+  const {product} = request.body
 
   pool.query(
-    'INSERT INTO  stock(product, units) VALUES ($1, $2)',
-    [product, units],
+    'INSERT INTO  stock(product) VALUES ($1)',
+    [product],
     (error) => {
       if (error) {
         throw error
       }
-	response.status(201).send(`Stock añadido: ${product} con ${units} unidades`)
+	response.status(201).send(`Servicio añadido: ${product}`)
     },
   )
 }
