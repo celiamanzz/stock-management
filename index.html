@@ -7,7 +7,7 @@ body {
   background-color: white;
 }
 h1 {
-  color: #46001d;
+  color: #9a7611;
 }
 p {
   font-weight: bold;
@@ -15,7 +15,7 @@ p {
 
 button {
   font-weight: bold;
-  background-color: #46001d;
+  background-color: #9a7611;
   border: none;
   color: white;
   padding: 8px;
@@ -30,26 +30,26 @@ button {
 </head>
 <body>
 
-<h1>Aplicación de Gestión de Servicios</h1>
+<h1>Aplicación de Gestión de Stock</h1>
 
-<p>Mostrar Servicios</p>
+<p>Mostrar Productos</p>
 <form method="GET" action="/stocks">
-  <button type="submit" name="VerStock">Ver Todos los Servicios</button>
+  <button type="submit" name="VerStock">Ver Productos</button>
 </form>
 
 
-<p>Crear nuevo Servicio</p>
+<p>Crear nuevo Producto</p>
 <form action="/stocks" method="POST">
   <input type="text" placeholder="Producto" name="product">
   <!--<input type="number" placeholder="Unidades" name="units">-->
   <button type="submit">Añadir</button>
 </form>
 
-<!--
-<p>Modificar Servicio</p>
+
+<p>Modificar Producto</p>
 <form action="/stocks_mod" method="POST">
   <input type="text" placeholder="Producto" name="product">
   <input type="number" placeholder="Unidades" name="units">
   <button type="submit">Modificar</button>
 </form>
--->
+

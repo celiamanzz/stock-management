@@ -20,10 +20,10 @@ const getStock = (request, response) => {
 
     const data = results.rows;
 
-var result = "Servicios obtenidos: ";
+var result = "Productos obtenidos: ";
 
     data.forEach(row => {
-       result = result + "<br/>" + (`Producto: ${row.product}`);
+       result = result + "<br/>" + (`Producto: ${row.product}, ${row.units} `);
     })
 
     response.status(200).send(result)
@@ -46,7 +46,7 @@ console.log(request.body)
       if (error) {
         throw error
       }
-	response.status(201).send(`Servicio añadido: ${product}`)
+	response.status(201).send(`Producto añadido: ${product}`)
     },
   )
 }
