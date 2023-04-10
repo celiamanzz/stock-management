@@ -26,12 +26,19 @@
     <style>
       body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 16px;
+        font-size: 26px;
       }
 
       p {
+        font-weight: lighter;
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 30px;
         font-weight: bold;
       }
+
       h1 {
         color: #071d45;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -78,10 +85,11 @@
       </form>
     </div>
 
-    <div class="container text-center">
+    <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <p>Crear nuevo Producto</p>
+          <h2>Crear nuevo Producto</h2>
+          <p>Here you can create a new product</p>
           <form
             action="/stocks"
             method="POST"
@@ -100,7 +108,8 @@
           </form>
         </div>
         <div class="col-md-6">
-          <p>Modificar Producto</p>
+          <h2>Modificar Producto</h2>
+          <p>Here you can update an existing product</p>
           <form
             action="/stocks_mod"
             method="POST"
