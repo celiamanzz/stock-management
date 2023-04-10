@@ -5,6 +5,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
     />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 
     <style>
@@ -28,6 +32,14 @@
         background-color: #bff9ff;
         padding: 50px;
         margin-bottom: 30px;
+      }
+
+      .column {
+        display: inline-block;
+        width: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid black;
       }
 
       button {
@@ -55,6 +67,10 @@
       <form method="GET" action="/stocks">
         <button type="submit" name="VerStock">Ver Productos</button>
       </form>
+    </div>
+    <div class="row">
+      <div class="column">Column 1</div>
+      <div class="column">Column 2</div>
     </div>
 
     <div class="container text-center">
