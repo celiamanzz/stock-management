@@ -15,39 +15,46 @@
         font-weight: bold;
       }
       h1 {
-        color: aliceblue;
+        color: #082d6b;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 36px;
         text-align: center;
         font-weight: bold;
       }
 
+      .bg-custom {
+        background-color: #7be9f5;
+        padding: 50px;
+        margin-bottom: 30px;
+      }
+
       button {
         font-weight: bold;
-        background-color: #9a7611;
+        background-color: #082d6b;
+        box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+          rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
         border: none;
         color: white;
         padding: 8px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 12px;
-        border-radius: 12px;
-      }
-
-      .bg-custom {
-        background-color: #338f99;
-        padding: 50px;
-        margin-bottom: 30px;
+        font-size: 100%;
+        height: 44px;
+        border-radius: 6px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <div class="bg-custom p-0">
       <h1>Aplicación de Gestión de Stock</h1>
+
+      <form method="GET" action="/stocks">
+        <button type="submit" name="VerStock">Ver Productos</button>
+      </form>
     </div>
 
-    <p>Mostrar Productos</p>
     <form method="GET" action="/stocks">
       <button type="submit" name="VerStock">Ver Productos</button>
     </form>
