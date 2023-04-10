@@ -55,36 +55,28 @@
       </form>
     </div>
 
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-sm-6 col-custom">
+        <div class="col-md-6">
           <p>Crear nuevo Producto</p>
-          <form class="form-custom" action="/stocks" method="POST">
-            <input
-              type="text"
-              placeholder="Producto"
-              name="product"
-              style="height: 44px"
-            />
-            <!--<input type="number" placeholder="Unidades" name="units">-->
+          <form
+            action="/stocks"
+            method="POST"
+            class="d-flex align-items-center"
+          >
+            <input type="text" placeholder="Producto" name="product" />
             <button type="submit">Añadir</button>
           </form>
         </div>
-        <div class="col-sm-6 col-custom">
+        <div class="col-md-6">
           <p>Modificar Producto</p>
-          <form class="form-custom" action="/stocks_mod" method="POST">
-            <input
-              type="text"
-              placeholder="Producto"
-              name="product"
-              style="height: 44px"
-            />
-            <input
-              type="number"
-              placeholder="Unidades"
-              name="units"
-              style="height: 44px"
-            />
+          <form
+            action="/stocks_mod"
+            method="POST"
+            class="d-flex align-items-center"
+          >
+            <input type="text" placeholder="Producto" name="product" />
+            <input type="number" placeholder="Unidades" name="units" />
             <button type="submit">Modificar</button>
           </form>
         </div>
