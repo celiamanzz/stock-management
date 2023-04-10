@@ -43,15 +43,7 @@
       .bg-custom {
         background-color: #bff9ff;
         padding: 50px;
-        margin-bottom: 30px;
-      }
-
-      .column {
-        display: inline-block;
-        width: 50%;
-        padding: 10px;
-        box-sizing: border-box;
-        border: 1px solid black;
+        margin-bottom: 100px;
       }
 
       button {
@@ -88,18 +80,26 @@
 
     <div class="container text-center">
       <div class="row">
-        <div class="col">
+        <div class="col-md-6">
           <p>Crear nuevo Producto</p>
           <form
             action="/stocks"
             method="POST"
             class="d-flex align-items-center"
           >
-            <input type="text" placeholder="Producto" name="product" />
-            <button type="submit">Añadir</button>
+            <div class="d-flex align-items-center justify-content-center">
+              <input
+                type="text"
+                placeholder="Producto"
+                name="product"
+                class="form-control form-control-lg"
+                style="width: 80%"
+              />
+              <button type="submit" class="btn btn-primary ml-3">Añadir</button>
+            </div>
           </form>
         </div>
-        <div class="col">
+        <div class="col-md-6">
           <p>Modificar Producto</p>
           <form
             action="/stocks_mod"
