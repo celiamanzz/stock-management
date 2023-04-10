@@ -27,20 +27,23 @@
       body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 26px;
+        color: #285f3a;
       }
 
       p {
         font-weight: lighter;
         font-size: 20px;
+        color: #285f3a;
       }
 
       h2 {
         font-size: 30px;
         font-weight: bold;
+        color: #285f3a;
       }
 
       h1 {
-        color: #071d45;
+        color: #285f3a;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 36px;
         text-align: center;
@@ -48,14 +51,14 @@
       }
 
       .bg-custom {
-        background-color: #bff9ff;
+        background-color: #e7e4ae;
         padding: 50px;
         margin-bottom: 100px;
       }
 
       .btn-primary {
-        background-color: #0099ff; /* new background color */
-        border-color: #004877; /* new border color */
+        background-color: #effbeb; /* new background color */
+        border-color: #285f3a; /* new border color */
       }
 
       button {
@@ -82,8 +85,8 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <div class="bg-custom p-0" style="text-align: center">
-      <h1>Aplicación de Gestión de Stock</h1>
+    <div class="bg-custom p-25" style="text-align: center">
+      <h1>Stock Management App</h1>
 
       <form method="GET" action="/stocks">
         <button type="submit" name="VerStock" class="btn btn-primary ml-3">
@@ -95,8 +98,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h2>Crear nuevo Producto</h2>
-          <p>Here you can create a new product</p>
+          <h2>Create new product</h2>
+          <p>Here you can create a new product in Salesforce</p>
           <form
             action="/stocks"
             method="POST"
@@ -110,13 +113,13 @@
                 class="form-control form-control-lg"
                 style="width: 80%"
               />
-              <button type="submit" class="btn btn-primary ml-3">Añadir</button>
+              <button type="submit" class="btn btn-primary ml-3">Add</button>
             </div>
           </form>
         </div>
         <div class="col-md-6">
-          <h2>Modificar Producto</h2>
-          <p>Here you can update an existing product</p>
+          <h2>Modify Product</h2>
+          <p>Here you can update an existing product from Salesforce</p>
           <form
             action="/stocks_mod"
             method="POST"
@@ -136,9 +139,7 @@
               class="form-control form-control-lg"
               style="width: 80%"
             />
-            <button type="submit" class="btn btn-primary ml-3">
-              Modificar
-            </button>
+            <button type="submit" class="btn btn-primary ml-3">Modify</button>
           </form>
         </div>
       </div>
