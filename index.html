@@ -55,22 +55,40 @@
       </form>
     </div>
 
-    <form method="GET" action="/stocks">
-      <button type="submit" name="VerStock">Ver Productos</button>
-    </form>
-
-    <p>Crear nuevo Producto</p>
-    <form action="/stocks" method="POST">
-      <input type="text" placeholder="Producto" name="product" />
-      <!--<input type="number" placeholder="Unidades" name="units">-->
-      <button type="submit">Añadir</button>
-    </form>
-
-    <p>Modificar Producto</p>
-    <form action="/stocks_mod" method="POST">
-      <input type="text" placeholder="Producto" name="product" />
-      <input type="number" placeholder="Unidades" name="units" />
-      <button type="submit">Modificar</button>
-    </form>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-custom">
+          <p>Crear nuevo Producto</p>
+          <form class="form-custom" action="/stocks" method="POST">
+            <input
+              type="text"
+              placeholder="Producto"
+              name="product"
+              style="height: 44px"
+            />
+            <!--<input type="number" placeholder="Unidades" name="units">-->
+            <button type="submit">Añadir</button>
+          </form>
+        </div>
+        <div class="col-sm-6 col-custom">
+          <p>Modificar Producto</p>
+          <form class="form-custom" action="/stocks_mod" method="POST">
+            <input
+              type="text"
+              placeholder="Producto"
+              name="product"
+              style="height: 44px"
+            />
+            <input
+              type="number"
+              placeholder="Unidades"
+              name="units"
+              style="height: 44px"
+            />
+            <button type="submit">Modificar</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
