@@ -53,6 +53,11 @@
         margin-bottom: 100px;
       }
 
+      .btn-primary {
+        background-color: #0099ff; /* new background color */
+        border-color: #004877; /* new border color */
+      }
+
       button {
         font-weight: bold;
         background-color: #071d45;
@@ -115,9 +120,23 @@
             method="POST"
             class="d-flex align-items-center"
           >
-            <input type="text" placeholder="Producto" name="product" />
-            <input type="number" placeholder="Unidades" name="units" />
-            <button type="submit">Modificar</button>
+            <input
+              type="text"
+              placeholder="Producto"
+              name="product"
+              class="form-control form-control-lg"
+              style="width: 80%"
+            />
+            <input
+              type="number"
+              placeholder="Unidades"
+              name="units"
+              class="form-control form-control-lg"
+              style="width: 80%"
+            />
+            <button type="submit" class="btn btn-primary ml-3">
+              Modificar
+            </button>
           </form>
         </div>
       </div>
