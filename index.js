@@ -20,7 +20,7 @@ app.use(express.static(__dirname + "/public"));
 //const data = results.rows;
 
 const getStock = (request, response) => {
-  pool.query("SELECT name FROM salesforce.account", (error, results) => {
+  pool.query("SELECT * FROM stock", (error, results) => {
     if (error) {
       throw error;
     }
@@ -29,8 +29,7 @@ const getStock = (request, response) => {
     var result = "Productos obtenidos: ";
 
     data.forEach((row) => {
-      //result = result + "<br/>" + (`Producto: ${row.product}, ${row.units} `);
-      result = result + "<br/>" + `Tienda: ${row.name} `;
+      result = result + "<br/>" + `Producto: ${row.product}, ${row.units} `;
     });
 
     response.status(200).send(result);
@@ -38,6 +37,22 @@ const getStock = (request, response) => {
     //)
 
     //response.status(200).json(results.rows)
+  });
+};
+
+const getShop = (request, response) => {
+  pool.query("SELECT name FROM salesforce.account", (error, results) => {
+    if (error) {
+      throw error;
+    }
+    const shops = results.rows;
+    var result = "Available shops:";
+
+    shops.forEach((row) => {
+      result = result + "<br/>" + `Tienda: ${row.name} `;
+    });
+
+    response.status(200).send(result);
   });
 };
 
@@ -83,6 +98,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/stocks", getStock);
+app.get("/shops", getShop);
 app.post("/stocks", addStock);
 app.post("/stocks_mod", updateStock);
 
