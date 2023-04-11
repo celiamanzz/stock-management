@@ -1,71 +1,73 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const {pool} = require('./config')
-const path = require('path');
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const { pool } = require("./config");
+const path = require("path");
 
+const app = express();
 
-const app = express()
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(express.static(__dirname + "/public"));
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(cors())
-app.use(express.static(__dirname + '/public'));
+//const getStock = (request, response) => {
+//pool.query('SELECT * FROM stock', (error, results) => {
+//if (error) {
+//throw error
+//}
+
+//const data = results.rows;
 
 const getStock = (request, response) => {
-  pool.query('SELECT * FROM stock', (error, results) => {
+  pool.query("SELECT name FROM salesforce.account", (error, results) => {
     if (error) {
-      throw error
+      throw error;
     }
-
     const data = results.rows;
 
-var result = "Productos obtenidos: ";
+    var result = "Productos obtenidos: ";
 
-    data.forEach(row => {
-       result = result + "<br/>" + (`Producto: ${row.product}, ${row.units} `);
-    })
+    data.forEach((row) => {
+      //result = result + "<br/>" + (`Producto: ${row.product}, ${row.units} `);
+      result = result + "<br/>" + `Tienda: ${row.name} `;
+    });
 
-    response.status(200).send(result)
-	
+    response.status(200).send(result);
+
     //)
 
     //response.status(200).json(results.rows)
-  })
-}
+  });
+};
 
 const addStock = (request, response) => {
-console.log(request.body)
+  console.log(request.body);
 
-  const {product} = request.body
+  const { product } = request.body;
 
-  pool.query(
-    'INSERT INTO  stock(product) VALUES ($1)',
-    [product],
-    (error) => {
-      if (error) {
-        throw error
-      }
-	response.status(201).send(`Producto añadido: ${product}`)
-    },
-  )
-}
+  pool.query("INSERT INTO  stock(product) VALUES ($1)", [product], (error) => {
+    if (error) {
+      throw error;
+    }
+    response.status(201).send(`Producto añadido: ${product}`);
+  });
+};
 
 const updateStock = (request, response) => {
-  const {product, units} = request.body
+  const { product, units } = request.body;
 
   pool.query(
-    'UPDATE stock SET units = $1 WHERE product = $2',
+    "UPDATE stock SET units = $1 WHERE product = $2",
     [units, product],
     (error, results) => {
       if (error) {
-        throw error
+        throw error;
       }
-      response.status(200).send(`Stock modificado: ${product}`)
+      response.status(200).send(`Stock modificado: ${product}`);
     }
-  )
-}
-
+  );
+};
 
 /*
 app
@@ -76,16 +78,15 @@ app
   .post(addStock)
 */
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.get('/stocks', getStock)
-app.post('/stocks', addStock)
-app.post('/stocks_mod', updateStock)
-
+app.get("/stocks", getStock);
+app.post("/stocks", addStock);
+app.post("/stocks_mod", updateStock);
 
 // Start server
 app.listen(process.env.PORT || 3002, () => {
-  console.log(`Server listening`)
-})
+  console.log(`Server listening`);
+});
