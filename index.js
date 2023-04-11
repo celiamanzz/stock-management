@@ -65,7 +65,7 @@ const addStock = (request, response) => {
     if (error) {
       throw error;
     }
-    response.status(201).send(`Producto añadido: ${product}`);
+    response.status(201).send(`Added Product: ${product}`);
   });
 };
 
@@ -79,7 +79,7 @@ const updateStock = (request, response) => {
       if (error) {
         throw error;
       }
-      response.status(200).send(`Stock modificado: ${product}`);
+      response.status(200).send(`Stock Modified: ${product}`);
     }
   );
 };
