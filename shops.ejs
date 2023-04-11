@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 26px;
+        color: #285f3a;
+      }
+
+      p {
+        font-weight: lighter;
+        font-size: 20px;
+        color: #285f3a;
+      }
+
+      h2 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #285f3a;
+      }
+
+      h1 {
+        color: #285f3a;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 36px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+
+      .bg-custom {
+        background-color: #e7e4ae;
+        padding: 50px;
+        margin-bottom: 100px;
+      }
+
+      .btn-primary {
+        background-color: #effbeb;
+        border-color: #285f3a;
+        color: #285f3a;
+      }
+      .btn-primary:hover {
+        background-color: #285f3a;
+        border-color: #285f3a;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Existing Shops</h1>
+    <ul>
+      <% shops.forEach(function(shop) { %>
+      <li><%= shop.name %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

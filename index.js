@@ -52,7 +52,7 @@ const getShop = (request, response) => {
       result = result + "<br/>" + `Tienda: ${row.name} `;
     });
 
-    response.status(200).send(result);
+    response.render("shops", { shops });
   });
 };
 
